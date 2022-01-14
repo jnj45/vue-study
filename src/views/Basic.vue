@@ -38,7 +38,7 @@
         <hr>
         <label for="">클래스와 스타일에 데이타 바인딩 예제</label><br>
         <div class="container" v-bind:class="{'active':isActive, 'text-red':isRed}">
-            Class Binding: 조건바인딩
+            Class Binding: 조건부 바인딩
         </div>
         <div class="container" v-bind:class="[activeClass, redClass]">
             Class Binding : 배열값 바인딩
