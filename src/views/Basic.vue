@@ -43,6 +43,41 @@
         <div class="container" v-bind:class="[activeClass, redClass]">
             Class Binding : 배열값 바인딩
         </div>
+        <div v-bind:style="styleObject">
+            인라인 스타일 바인딩
+        </div>
+        <hr>
+        <label for="">리스트 렌더링 예제</label><br>
+        <div>
+            <select v-model="city">
+                <option :key="i" :value="city.v" v-for="(city, i) in options">{{city.t}}</option>
+            </select>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>제품코드</th>
+                        <th>제품명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :key="i" v-for="(p, i) in products">
+                        <td>{{p.code}}</td>
+                        <td>{{p.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <label for="">렌더링 문법</label><br>
+        <h1 v-if="isRender">v-if는 false인 경우 element 자체가 없다.</h1>
+        <h1 v-else>isRender 값이 false이면, 이 블록이 화면이 보여지게 된다.</h1>
+        <h1 v-if="type=='A'">A</h1>
+        <h1 v-else-if="type=='B'">B</h1>
+        <h1 v-else>Other</h1>
+        <h1 v-show="isShow">v-show는 element는 있지만 스타일로 안 보여지는 것.</h1>
+
     </div>
 </template>
 <script>
@@ -69,7 +104,22 @@ export default {
             isActive: true,
             isRed: true,
             activeClass: 'active',
-            redClass: 'text-red'
+            redClass: 'text-red',
+            styleObject: {
+                backgroundColor: 'yellow',
+                color: 'red',
+                fontWeight: 'bold'
+            },
+            options: [
+                {v:'02', t:'서울'},{v:'051', t:'부산'},{v:'064', t:'제주'}
+            ],
+            products:[
+                {code:'111',name:'키보드'},
+                {code:'112',name:'마우스'}
+            ],
+            isRender: true,
+            type: 'C',
+            isShow: true
         }
     },
     setup() {

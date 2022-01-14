@@ -16,27 +16,36 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  // {
-  //   path: '/contact',
-  //   name: 'Contact',
-  //   component: Contact
-  // }
   {
     path: '/contact',
     name: 'Contact',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "contact", webpackPrefetch:true */ '../views/Contact.vue')
   },
   {
     path: '/basic',
     name: 'Basic',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "basic" */ '../views/Basic.vue')
   },
+  {
+    path: '/event',
+    name: 'Event',
+    component: () => import(/* webpackChunkName: "event" */ '../views/Event.vue')
+  },
+  {
+    path: '/computed',
+    name: 'Computed',
+    component: () => import(/* webpackChunkName: "computed" */ '../views/Computed.vue')
+  },
+  {
+    path: '/sampleSearch',
+    name: 'SampleSearch',
+    component: () => import(/* webpackChunkName: "sampleSearch" */ '../views/SampleSearch.vue')
+  },
+  {
+    path: '/sampleSave',
+    name: 'SampleSave',
+    component: () => import(/* webpackChunkName: "sampleSave" */ '../views/SampleSave.vue')
+  }
 ]
 
 const router = createRouter({
