@@ -45,6 +45,21 @@ const routes = [
     path: '/sampleSave',
     name: 'SampleSave',
     component: () => import(/* webpackChunkName: "sampleSave" */ '../views/SampleSave.vue')
+  },
+  {
+    path: '/example',
+    name: 'Example',
+    component: () => import(/* webpackChunkName: "example" */ '../views/Example.vue')
+  },
+  {
+    path: '/slot',
+    name: 'Slot',
+    component: () => import(/* webpackChunkName: "slot" */ '../views/SlotUse.vue')
+  },
+  {
+    path: '/provideInject',
+    name: 'ProvideInject',
+    component: () => import(/* webpackChunkName: "provideInject" */ '../views/ProvideInject.vue')
   }
 ]
 

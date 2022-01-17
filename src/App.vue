@@ -9,8 +9,11 @@
       <router-link to="/basic">Basic</router-link> |
       <router-link to="/computed">Computed</router-link>
       <router-link to="/basic">Basic</router-link> |
-      <router-link to="/sampleSearch">Sample_Search</router-link>
-      <router-link to="/sampleSave">Sample_Save</router-link>
+      <router-link to="/sampleSearch">Sample_Search</router-link> |
+      <router-link to="/sampleSave">Sample_Save</router-link> |
+      <router-link to="/example">Example</router-link> |
+      <router-link to="/slot">Slot</router-link> |
+      <router-link to="/provideInject">ProvideInject</router-link> |
     </div>
     <router-view/>
   </div>
