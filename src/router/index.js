@@ -60,6 +60,46 @@ const routes = [
     path: '/provideInject',
     name: 'ProvideInject',
     component: () => import(/* webpackChunkName: "provideInject" */ '../views/ProvideInject.vue')
+  },
+  {
+    path: '/calculator',
+    name: 'Calculator',
+    component: () => import(/* webpackChunkName: "calculator" */ '../views/Calculator.vue')
+  },
+  {
+    path: '/compositionAPI',
+    name: 'CompositionAPI',
+    component: () => import(/* webpackChunkName: "compositionAPI" */ '../views/CompositionAPI.vue')
+  },
+  {
+    path: '/compositionAPI2',
+    name: 'CompositionAPI2',
+    component: () => import(/* webpackChunkName: "compositionAPI2" */ '../views/CompositionAPI2.vue')
+  },
+  {
+    path: '/compositionAPI3',
+    name: 'CompositionAPI3',
+    component: () => import(/* webpackChunkName: "compositionAPI3" */ '../views/CompositionAPI3.vue')
+  },
+  {
+    path: '/compositionAPI4',
+    name: 'CompositionAPI4',
+    component: () => import(/* webpackChunkName: "compositionAPI4" */ '../views/CompositionAPI4.vue')
+  },
+  {
+    path: '/compositionAPIProvide',
+    name: 'CompositionAPIProvide',
+    component: () => import(/* webpackChunkName: "compositionAPIProvide" */ '../views/CompositionAPIProvide.vue')
+  },
+  {
+    path: '/customDirective',
+    name: 'CustomDirective',
+    component: () => import(/* webpackChunkName: "customDirective" */ '../views/CustomDirective.vue')
+  },
+  {
+    path: '/plugins',
+    name: 'Plugins',
+    component: () => import(/* webpackChunkName: "plugins" */ '../views/Plugins.vue')
   }
 ]
 

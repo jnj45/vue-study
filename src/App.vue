@@ -14,6 +14,14 @@
       <router-link to="/example">Example</router-link> |
       <router-link to="/slot">Slot</router-link> |
       <router-link to="/provideInject">ProvideInject</router-link> |
+      <router-link to="/calculator">Calculator</router-link> |
+      <router-link to="/compositionAPI">CompositionAPI</router-link> |
+      <router-link to="/compositionAPI2">CompositionAPI2</router-link> |
+      <router-link to="/compositionAPI3">CompositionAPI3</router-link> |
+      <router-link to="/compositionAPI4">CompositionAPI4</router-link> |
+      <router-link to="/compositionAPIProvide">CompositionAPIProvide</router-link> |
+      <router-link to="/customDirective">CustomDirective</router-link> |
+      <router-link to="/plugins">Plugins</router-link> |
     </div>
     <router-view/>
   </div>
@@ -41,3 +49,4 @@
   color: #42b983;
 }
 </style>
+

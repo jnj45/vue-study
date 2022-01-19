@@ -28,10 +28,13 @@
 </template>
 <script>
 import axios from 'axios';
+//import ApiMixin from '../api.js';
 
 export default {
     name: '',
     components: {},
+    mixins: [//ApiMixin
+    ],
     data() {
         return {
             cities: [{code:'02',name:'서울'},{code:'051',name:'부산'},{code:'064',name:'제주'}],
@@ -42,7 +45,9 @@ export default {
     },
     setup() {},
     created() {},
-    mounted() {},
+    mounted() {
+        console.log("컴포넌트 mounted.");
+    },
     unmounted() {},
     methods: {
         async searchUserList() {
@@ -52,12 +57,17 @@ export default {
             }
             console.log(params);
 
-            this.userList = await this.api('https://ca2cf65a-ebd5-4efc-a0c4-55baeaf6d52c.mock.pstmn.io/userList','get', params);
+            // this.userList = await this.api('https://ca2cf65a-ebd5-4efc-a0c4-55baeaf6d52c.mock.pstmn.io/userList','get', params);
+            const searchList = await this.$callApi('https://ca2cf65a-ebd5-4efc-a0c4-55baeaf6d52c.mock.pstmn.io/userList','get', params);
+            console.log('searchList===========================');
+            console.log(searchList);
+            this.userList = searchList;
             // this.userList = [
-            //     {name:'유재석2', age: 50, job:'연예인'},
-            //     {name:'하하2', age: 45, job:'연예인'},
-            //     {name:'김종국2', age: 48, job:'연예인,가수'}
+            //     {name:'유재석3', age: 50, job:'연예인'},
+            //     {name:'하하3', age: 45, job:'연예인'},
+            //     {name:'김종국3', age: 48, job:'연예인,가수'}
             // ];
+            console.log('userList=============================');
             console.log(this.userList);
         },
         async api(url, method, data) {
