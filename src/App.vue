@@ -22,6 +22,8 @@
       <router-link to="/compositionAPIProvide">CompositionAPIProvide</router-link> |
       <router-link to="/customDirective">CustomDirective</router-link> |
       <router-link to="/plugins">Plugins</router-link> |
+      <router-link to="/storeAccess">StoreAccess</router-link> |
+      <router-link to="/kakaologin">KakaoLogin</router-link> |
     </div>
     <router-view/>
   </div>

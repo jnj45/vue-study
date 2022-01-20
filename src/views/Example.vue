@@ -3,7 +3,8 @@
         <PageTitle :title="title"/>
         <button @click="callChildFunc">부모 버튼</button>
         <br><br>
-        <span>{{parentMsg}}</span>
+        <span>parentMsg : {{parentMsg}}</span><br>
+        <span>syncMsg : {{syncMsg}}</span>
         
         <!--v-bind를 사용 안하면 문자로 전달됨. -->
         <ChildComponent 
@@ -34,7 +35,7 @@ export default {
     },
     computed: {
         syncMsg() {
-            return ''; //this.$refs.childComponent.msg; //Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'msg') 오류 발생함.
+            return this.$refs.childComponent.msg; //Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'msg') 오류 발생함.
         }
     },
     setup() {},

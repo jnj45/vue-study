@@ -5,6 +5,7 @@ import CommonApi from './api.js'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import i18nPlugin from './plugins/i18n';
+import store from './store';
 
 const i18nStrings = {
   en: {
@@ -20,12 +21,15 @@ createApp(App)
 .mixin(CommonApi)
 .use(VueSweetalert2)
 .use(i18nPlugin, i18nStrings)
+.use(store)
 .directive('focus', {
   mounted(el){
     el.focus();
   }
 })
 .mount('#app');
+
+window.Kakao.init("0b70a4079411332bb8588341bd38644d");
 
 /*
 // Import the functions you need from the SDKs you need
