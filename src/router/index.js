@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-//import Contact from '../views/Contact.vue'
+// import NotFoundPage from '../views/NotFoundPage.vue'
 
 const routes = [
   {
@@ -111,6 +111,11 @@ const routes = [
     name: 'KakaoLogin',
     component: () => import(/* webpackChunkName: "kakaologin" */ '../views/KakaoLogin.vue')
   }
+  // ,
+  // {
+  //   path: '*',
+  //   component: NotFoundPage
+  // }
 ]
 
 const router = createRouter({
