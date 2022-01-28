@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <!--<img alt="Vue logo" src="../assets/logo.png">-->
+    <router-link to="/login">로그인</router-link><br>
+    <button @click="test">테스트</button><br>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -8,6 +10,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import _axios from '@/plugins/axios.js'
 
 export default {
   name: 'Home',
@@ -15,7 +18,22 @@ export default {
     HelloWorld
   },
   mounted() {
-    console.log(process.env);
+    //console.log(process.env);
+  },
+  methods: {
+    test() {
+            const loginVO = {
+                id: 'higis',
+                password: '1111'
+            }
+            // const res = this.$callSyncApi2("/uat/uia/actionLoginAjax.do", "post", loginVO);
+            // console.log(res);
+
+            const response = _axios.post("/uat/uia/actionLoginAjax.do", loginVO);
+            console.log(response);
+[]
+            this.$router.push({name: 'Home'}); //페이지 이동.
+        }
   }
 }
 </script>

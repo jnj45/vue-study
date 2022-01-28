@@ -11,7 +11,7 @@
     </div>
 </template>
 <script>
-import {plusNumbers} from '../common.js';
+import {plusNumbers} from '../util.js';
 
 export default {
     name: '',
@@ -34,7 +34,7 @@ export default {
     methods: {
         
     }
-}
+} 
 </script>
 <style scoped>
 </style>

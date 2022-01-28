@@ -1,10 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import CommonApi from './api.js'
+import Api from './api.js'
+import Api2 from './api2.js'
 import VueSweetalert2 from 'vue-sweetalert2';
+import _ from 'lodash';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import i18nPlugin from './plugins/i18n';
+import _axios from './plugins/axios';
 import store from './store';
 
 const i18nStrings = {
@@ -18,7 +21,8 @@ const i18nStrings = {
 
 createApp(App)
 .use(router)
-.mixin(CommonApi)
+.mixin(Api)
+.mixin(Api2)
 .use(VueSweetalert2)
 .use(i18nPlugin, i18nStrings)
 .use(store)

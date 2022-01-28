@@ -4,15 +4,18 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "local": "vue-cli-service serve --mode local",
+    "serve_local": "vue-cli-service serve --mode local",
+    "serve_dev": "vue-cli-service serve --mode dev",
     "build": "vue-cli-service build",
     "build_local": "vue-cli-service build --mode local",
+    "build_dev": "vue-cli-service build --mode dev",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "firebase": "^9.6.3",
+    "lodash": "^4.17.21",
     "sweetalert2": "^11.3.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",

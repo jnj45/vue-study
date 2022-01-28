@@ -7,18 +7,13 @@ export default {
     // unmounted() {
         
     // },
-    data() {
-        return {
-            
-        }
-    },
     created() {
-        // console.log('api.js created!');
+        // console.log('api2.js created!');
         // axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-        // axios.defaults.baseURL = process.env.VUE_APP_API_SERVER_URL;
+        // axios.defaults.baseURL = 'http://localhost';
     },
     methods: {
-        async $callApi(url, method, data) {
+        async $callApi2(url, method, data) {
             // return (
             //     await axios({
             //         method: method,
@@ -40,7 +35,7 @@ export default {
                 console.log(e);
             })
         },
-        $callSyncApi(url, method, data) {
+        $callSyncApi2(url, method, data) {
             axios({
                 method: method,
                 url: url, //process.env.VUE_APP_API_SERVER_URL +
@@ -55,5 +50,5 @@ export default {
                 console.log(e);
             })
         }
-    }
+    } 
 }

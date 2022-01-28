@@ -10,6 +10,7 @@ const store = createStore({
                 {product_id:2, procude_name:'보조배터리'},
                 {product_id:3, procude_name:'보조배터리2'}
             ],
+            user: {},
             kakaoUser: {}
         }
     },
