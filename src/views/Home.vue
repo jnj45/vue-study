@@ -22,18 +22,27 @@ export default {
   },
   methods: {
     test() {
-            const loginVO = {
-                id: 'higis',
-                password: '1111'
-            }
-            // const res = this.$callSyncApi2("/uat/uia/actionLoginAjax.do", "post", loginVO);
-            // console.log(res);
-
-            const response = _axios.post("/uat/uia/actionLoginAjax.do", loginVO);
-            console.log(response);
-[]
-            this.$router.push({name: 'Home'}); //페이지 이동.
+        const loginVO = {
+            id: 'higis',
+            password: '1111'
         }
+        // const res = this.$callSyncApi2("/uat/uia/actionLoginAjax.do", "post", loginVO);
+        // console.log(res);
+
+        const response = _axios.post("/uat/uia/actionLoginAjax.do", loginVO);
+        response
+        .then((res) => {
+          console.log('then =====================================================');
+          console.log(res);
+        })
+        .catch(e => {
+          console.log('catch =====================================================');  
+          console.log(e);
+        });
+
+        console.log('here =====================================================');
+        console.log(response);
+    }
   }
 }
 </script>
