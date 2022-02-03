@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 let config = {
     headers: {'X-Requested-With':'XMLHttpRequest'},
@@ -63,16 +64,17 @@ _axios.interceptors.response.use(
             // console.log(error.response.headers);
 
             const errorStatus = error.response.status;
-        
-            if(errorStatus == '400') alert(error.response.data);
-            if(errorStatus == '401') alert('인증에 실패했습니다.');
-            if(errorStatus == '403') alert('권한이 없습니다.');
-            if(errorStatus == '500') alert('서버에서 오류가 발생하였습니다.');
             
-            if (error.response.data.errMsg){
-                alert(error.response.data.errMsg);
+            if (_.parseInt(errorStatus) >= 400){
+                if (error.response.data.errMsg){
+                    alert(error.response.data.errMsg);
+                }else{
+                    if(errorStatus == '400') alert(error.response.data);
+                    if(errorStatus == '401') alert('인증에 실패했습니다.');
+                    if(errorStatus == '403') alert('권한이 없습니다.');
+                    if(errorStatus == '500') alert('서버에서 오류가 발생하였습니다.');
+                }
             }
-
             return Promise.reject(error);
         } catch(err) {
             console.error('[_axios.interceptors.response] error : '+err.message);
@@ -80,4 +82,9 @@ _axios.interceptors.response.use(
     },
 );
 
-export default _axios;
+// export default _axios;
+export default {
+    install: (app) => {
+        app.config.globalProperties.$axios = _axios;
+    }
+} 

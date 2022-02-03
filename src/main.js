@@ -1,13 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import Api from './api.js'
-import Api2 from './api2.js'
-import VueSweetalert2 from 'vue-sweetalert2';
-import _ from 'lodash';
+import vueSweetalert2 from 'vue-sweetalert2';
+// import _ from 'lodash';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import i18nPlugin from './plugins/i18n';
-import _axios from './plugins/axios';
+import axios from './plugins/axios'
 import store from './store';
 
 const i18nStrings = {
@@ -21,11 +19,10 @@ const i18nStrings = {
 
 createApp(App)
 .use(router)
-.mixin(Api)
-.mixin(Api2)
-.use(VueSweetalert2)
-.use(i18nPlugin, i18nStrings)
+.use(vueSweetalert2)
+.use(axios)
 .use(store)
+.use(i18nPlugin, i18nStrings)
 .directive('focus', {
   mounted(el){
     el.focus();
@@ -33,7 +30,7 @@ createApp(App)
 })
 .mount('#app');
 
-window.Kakao.init("0b70a4079411332bb8588341bd38644d");
+// window.Kakao.init("0b70a4079411332bb8588341bd38644d");
 
 /*
 // Import the functions you need from the SDKs you need

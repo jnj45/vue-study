@@ -20,14 +20,17 @@ export default {
     mounted() {},
     unmounted() {},
     methods: {
-        login() {
+        async login() {
             const loginVO = {
                 id: this.id,
                 password: this.password
             }
-            const res = this.$callSyncApi("/uat/uia/actionLoginAjax.do", "post", loginVO);
-            console.log(res);
-[]
+            const response = await this.$axios.post("/uat/uia/actionLoginAjax.do", loginVO);
+            console.log(response);
+
+            const loginUser = response.data.fields.user;
+            this.$store.commit("user", loginUser);
+
             this.$router.push({name: 'Home'}); //페이지 이동.
         },
         logout() {
@@ -35,11 +38,11 @@ export default {
                 id: this.id,
                 password: this.password
             }
-            const res = this.$callApi("/uat/uia/actionLogoutAjax.do", "post", loginVO);
+            const res = this.$axios.post("/uat/uia/actionLogoutAjax.do", loginVO);
             console.log(res);
         },
         testApi() {
-            const res = this.$callApi("/sample2/selectAuthorSampleList.do", "post", {});
+            const res = this.$axios.post("/sample2/selectAuthorSampleList.do", {});
             console.log(res);
         }
     }

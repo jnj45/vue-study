@@ -57,8 +57,7 @@ export default {
             }
             console.log(params);
 
-            // this.userList = await this.api('https://ca2cf65a-ebd5-4efc-a0c4-55baeaf6d52c.mock.pstmn.io/userList','get', params);
-            const searchList = await this.$callApi('https://ca2cf65a-ebd5-4efc-a0c4-55baeaf6d52c.mock.pstmn.io/userList','get', params);
+            const searchList = await axios.get('https://ca2cf65a-ebd5-4efc-a0c4-55baeaf6d52c.mock.pstmn.io/userList', params);
             console.log('searchList===========================');
             console.log(searchList);
             this.userList = searchList;

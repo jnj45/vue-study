@@ -21,6 +21,9 @@ const store = createStore({
         increment(state) {
             state.count = state.count + 1;
         },
+        user(state, data){
+            state.user = data;
+        },
         kakaoUser(state, data) {
             state.kakaoUser = data;
         }
@@ -28,6 +31,9 @@ const store = createStore({
     getters: {
         cartCount: (state) => {
             return state.cart.length;
+        },
+        user: (state) => {
+            return state.user;
         }
     }
 })
